@@ -1,0 +1,31 @@
+<div class="container">
+		<div class="login"  [@login]='alogin'>
+			<p class="title">{{ltitle}}</p>
+			<div>
+				<input type="text" [ngModel]="name"
+					   placeholder="Username"><br>
+				<input type="pass" [ngModel]="pass" 
+					   placeholder="Password">
+			</div>
+			<div class="button sign">{{lbutton}}</div>
+		</div>
+	
+	<div class="back" [@back]='aback'>
+		<div class="message" style="display:{{mesl}};
+					visibility:{{mvis}}">
+			<p class="title"> One Of Us?</p>
+			<h3 class="mcontent">If you already have an account, 
+				just sign in. We've missed you!
+			</h3>
+		</div>
+		<div class="message" style="display:{{mesr}}; 
+				visibility:{{mvis}}">
+			<p class="title"> New Here?</p>
+			<h3 class="mcontent">Sign up and create your own todo list!
+			</h3>
+		</div>
+		<div class="button" (click)='toggle()'>
+			{{mbutton}}
+		</div>
+	</div>
+</div>

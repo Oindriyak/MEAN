@@ -1,0 +1,12 @@
+button{
+	cursor:pointer;
+	justify-content:center;
+	align-items:center;
+	
+}
+
+.logout{
+	width:15%;
+	border-radius:15px;
+	height:35px;
+}
