@@ -1,0 +1,44 @@
+<div class='body'>
+	
+<header>
+	<h1>Welcome {{name}}</h1>
+	<button class='logout'>Logout</button>
+</header>
+<div class='container'>
+	<div class='main'>
+		
+		<div class='title'>
+			<div class="hr"><hr></div>
+			<h1>Task Lists</h1>
+			<div class="hr"><hr></div>
+			
+		</div>
+		
+		<div style='display:{{visa}}'>
+			
+		 <button class='add' (click)='vis()' >
+			 +
+		 </button>
+			
+		<p>Add list	</p>
+		</div>	
+		<div class='input' style='display:{{visi}}' >
+			<input type='text' placeholder='Enter name of list' 
+				   [(ngModel)]='new'><br>
+			<button class='badd' (click)='add()'>Add</button> 
+			<button class='cancel' (click)='vis()'>Cancel</button>
+			
+		</div>
+	
+	</div>
+
+	<div *ngFor='let i of show'>
+	<app-lists [list]='list[i]' (update)='update($event)'>
+	</app-lists>
+	</div>
+	
+</div>		
+		
+</div>
+<img class='bg' src='https://images.unsplash.com/photo-1527769929977-c341ee9f2033?ixid=MnwxMjA3fDB8MHxzZWFyY2h8ODB8fHBhdHRlcm58ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' height='100%'>
+	     

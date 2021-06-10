@@ -1,1 +1,43 @@
-<p>lists works!</p>
+<div class='main'>
+	<button class='close'>x</button>
+	<h1>{{list.title}}</h1>
+	<div style='width=90%;'>
+		<hr>
+	</div>
+	<div class='container'>
+		<div *ngFor="let i of list.value ; index as j" class='item' 
+			(mouseout)='adel[j]="out"' >
+			
+			<div style="display:flex;width:100%;" (mouseover)='adel[j]="in"' >
+				
+				<div class='task' (click)='toggle(j)' [@task]='adel[j]'>
+					<s *ngIf ='i.c' style='color:#ff1010'>{{i.task}}</s>
+					<span *ngIf ='!i.c'>{{i.task}}</span>
+				</div>
+				<div class="d" [@del]='adel[j]'>
+					<button  class='del' (click)='del(j)'>
+					<i class="fa fa-trash-o" aria-hidden="true"></i>
+				</button>
+				</div>
+			</div>
+			
+			<div class='date'>
+				{{i.date}}
+			</div>
+			
+		</div>
+	</div>
+	<footer style='display:{{vis}}'> <button class='add' 
+		(click)='add()'>+</button>
+	</footer>
+	
+	<div class='input' style='display:{{visi}}' >
+		<input type='text' placeholder='Enter new todo' 
+			   [(ngModel)]="new"><br>
+		<input type='text' placeholder='Date' 
+			   [(ngModel)]="date"><br>
+		<button class='badd'(click)='input()' >Add</button> 
+		<button class='cancel' (click)='add()'>Cancel</button>	
+	</div>
+</div>
+

@@ -1,9 +1,10 @@
 .container{
-	height:800px;
+	height:100%;
 	width:100%;
 	display:flex;
 	background-color:white;
 	background-size:100%;
+	z-index:2;
 }
 
 .login{
@@ -13,7 +14,7 @@
 	display:flex;
 	flex-direction:column;
 	align-items:center;
-	height:800px;
+	height:100%;
 	z-index:2;
 	background-color:white
 }
@@ -24,12 +25,16 @@
 	flex-direction:column;
 	align-items:center;
 	width:30%;
-	height:800px;
+	height:100%;
 	z-index:4;
+	overflow:hidden;
+	background:none;
 	background-color:#35c49c;
 }
 .message{
-	
+	position:relative;
+	z-index:3;
+	overflow:hidden;
 	height:400px;
 	display:flex;
 	flex-direction:column;
@@ -60,6 +65,7 @@ input{
 
 .button{
 	cursor:pointer;
+	z-index:3;
 	width:50%;
 	border-radius:25px;
 	height:50px;
@@ -75,6 +81,20 @@ input{
 .sign{
 	background-color:#35c49c;
 	color:white;
-	width:0px;
+	width:20%;
 }
 
+/*.back:host {
+	overflow:hidden;
+	display:none;
+}
+*/
+
+img{
+	position:absolute;
+	left:0px;top:0px;
+	height:100%;
+	width:100%;
+	z-index:4;
+	clip-path: inset(0% 100% 100% 70%)
+}
